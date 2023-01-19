@@ -1,0 +1,10 @@
+Quản lý tốt nghiệp cho sinh viên: Một trường học đào tạo theo hai hình thức, học tín chỉ và học theo 
+chương trình mẫu. Đối với sinh viên học theo dạng tín chỉ, sinh viên phải hoàn thành các môn học 
+sao cho đảm bảo đủ số tín chỉ thì mới được phép tốt nghiệp. Đối với sinh viên học chương trình mẫu, 
+sinh viên được xét tốt nghiệp nếu điểm trung bình tất cả các môn trong chương trình cao hơn 
+5.0/10. Xây dựng hệ thống quản lý xét tốt nghiệp cho sinh viên gồm các chức năng sau: 
+- Thêm, sửa, xóa thông tin của một sinh viên 
+- Tìm kiếm sinh viên theo tên, mã SV, khóa học (check)
+- Thống kê sinh viên học theo kiểu tín chỉ, theo kiểu chương trình mẫu tại một thời điểm nhập vào (check)
+- Tìm kiếm sinh viên theo môn học 
+- Thống kê danh sách các sinh viên được phép tốt nghiệp trong năm học hiện tại
