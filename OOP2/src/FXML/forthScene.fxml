@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="forthScene">
@@ -19,5 +20,6 @@
       <Button layoutX="836.0" layoutY="410.0" mnemonicParsing="false" onAction="#back" text="Back" />
       <Button layoutX="55.0" layoutY="410.0" mnemonicParsing="false" onAction="#checkm" prefHeight="26.0" prefWidth="125.0" text="mẫu" />
       <Button layoutX="55.0" layoutY="372.0" mnemonicParsing="false" onAction="#checktc" prefHeight="26.0" prefWidth="126.0" text="tín chỉ" />
+      <TextField fx:id="searchAll" layoutX="244.0" layoutY="410.0" prefHeight="26.0" prefWidth="511.0" promptText="Tìm theo tên, MSSV,Kiểu" />
    </children>
 </AnchorPane>

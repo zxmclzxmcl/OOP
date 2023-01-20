@@ -3,7 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="thirdScene">
    <children>
@@ -15,5 +17,8 @@
         </columns>
       </TableView>
       <Button layoutX="516.0" layoutY="351.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <TextField fx:id="sinhvienmtext" alignment="CENTER" layoutX="64.0" layoutY="351.0" />
+      <Button layoutX="232.0" layoutY="351.0" mnemonicParsing="false" onAction="#check" text="check" />
+      <Text layoutX="65.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số sinh viên đang học theo chương trình mẫu:" />
    </children>
 </AnchorPane>

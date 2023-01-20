@@ -201,19 +201,6 @@ public class Controller implements Initializable {
             sinhvientheotin.setLoaict(svCate.getValue());
             svList.add(sinhvientheotin);  
         }
-        //Sinhvien sinhvien = new Sinhvien();
-        // sinhvien.setTensv(tensvText.getText());
-        // sinhvien.setKhoa(khoahocText.getText());
-        // sinhvien.setDiem(Double.parseDouble(diemthiText.getText()));
-        // sinhvien.setMssv(Integer.parseInt(mssvText.getText()));
-        // sinhvien.setSotin(Integer.parseInt(tinchiText.getText()));
-        // sinhvien.setMonhoc(monhocText.getText());
-        // sinhvien.setLoaict(svCate.getValue());
-        // if (sinhvienth.getDiem()<=10){
-        //     svList.remove(selected1);
-        //     table1.getSelectionModel().clearSelection();
-        //     if (sinhvien.getDiem()<=10)
-        //         svList.add(sinhvien);  
             //clear the TextField
             tensvText.clear();
             diemthiText.clear();

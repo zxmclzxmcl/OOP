@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.scene.*;
@@ -88,4 +89,14 @@ public class thirdScene implements Initializable {
             z--;
         }
     }
+
+    @FXML
+    private TextField sinhvienmtext;
+
+
+    @FXML
+    void check(ActionEvent event) {
+        sinhvienmtext.setText(String.valueOf(mauList.size()));
+    }
+
 }

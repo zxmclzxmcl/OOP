@@ -4,12 +4,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -38,6 +41,9 @@ public class forthScene implements Initializable{
 
     @FXML
     private TableColumn<Sinhvien, Integer> tccol;
+
+    @FXML
+    private TextField searchAll;
 
     @FXML
     void back(ActionEvent event) throws IOException {
@@ -101,7 +107,40 @@ public class forthScene implements Initializable{
         kieucol.setCellValueFactory(new PropertyValueFactory<Sinhvien, String>("loaict"));
         diemcol.setCellValueFactory(new PropertyValueFactory<Sinhvien, Double>("diem"));
         tccol.setCellValueFactory(new PropertyValueFactory<Sinhvien, Integer>("sotin"));
+
         table2.setItems(tongList);
+
+        FilteredList<Sinhvien> filteredData = new FilteredList<>(tongList);
+
+        searchAll.textProperty().addListener((observ, oldValue, newValue) -> {
+            filteredData.setPredicate(sinhvien ->{
+                //if the TextField is empty, display all data
+                if(newValue == null|| newValue.isEmpty()){
+                    return true;
+                }
+                //lower case the value for easier searching, this will be temporary
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                //compare the lowercase version of both value (the staff'name and the newValue)
+                if (sinhvien.getTensv().toLowerCase().indexOf(lowerCaseFilter) != -1 ||
+                 sinhvien.getLoaict().toLowerCase().indexOf(lowerCaseFilter) != -1 ||
+                 String.valueOf(sinhvien.getMssv()).indexOf(lowerCaseFilter) != -1 ){
+                    return true; // if the values are alike, return the data
+                }
+                else
+                    // if not, don't return the data
+                    return false;
+                
+            });
+        });
+
+        //wrap the FilteredList in SortedList, this will sort out all the value that are not alike
+        SortedList<Sinhvien> sortedData = new SortedList<>(filteredData);
+
+        //bind to the table use the comperator, otherwise, this won't have any effect
+        sortedData.comparatorProperty().bind(table2.comparatorProperty());
+        //set item of the table
+        table2.setItems(sortedData);
     }
     public void Tc(ObservableList<Sinhvien> tList){
         int max=0;

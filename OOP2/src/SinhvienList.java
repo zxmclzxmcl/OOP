@@ -1,6 +1,7 @@
 public class SinhvienList {
     Sinhvien[] sinhviens = new Sinhvien[100];
     Sinhvien[] sinhviens2 = new Sinhvien[100];
+    Sinhvien[] sinhviens3 = new Sinhvien[100];
 
     public SinhvienList() {
         for(int i = 0; i < 100; i ++) {
@@ -25,5 +26,6 @@ public class SinhvienList {
             }
         }
     }
+
 }
 
